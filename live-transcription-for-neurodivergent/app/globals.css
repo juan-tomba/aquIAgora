@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Cores acessíveis para pessoas neurodivergentes - tons suaves e calmantes */
+  --background: #fefce8; /* Soft neutral background */
+  --foreground: #374151; /* Dark text for readability */
+  --card: #ffffff; /* White card for content display */
+  --card-foreground: #374151; /* Dark text on cards */
+  --popover: #ffffff; /* White popover for tooltips */
+  --popover-foreground: #374151; /* Dark text in popovers */
+  --primary: #d97706; /* Primary action color - amber */
+  --primary-foreground: #ffffff; /* White text on primary backgrounds */
+  --secondary: #ec4899; /* Accent color for highlights - pink */
+  --secondary-foreground: #ffffff; /* White text on secondary backgrounds */
+  --muted: #fefce8; /* Light muted background */
+  --muted-foreground: #374151; /* Dark muted text */
+  --accent: #ec4899; /* Use for keyword highlights */
+  --accent-foreground: #ffffff; /* White text for accent elements */
+  --destructive: #be123c; /* Color for destructive actions */
+  --destructive-foreground: #ffffff; /* White text for destructive actions */
+  --border: #d1d5db; /* Soft gray border */
+  --input: #ffffff; /* Input fields background */
+  --ring: #d97706; /* Ring color for focus states */
+  --chart-1: #f97316; /* Color for chart elements */
+  --chart-2: #ec4899; /* Color for additional chart elements */
+  --chart-3: #d97706; /* Additional color for charts */
+  --chart-4: #fefce8; /* Light color for charts */
+  --chart-5: #374151; /* Dark color for charts */
+  --radius: 0.25rem; /* Rounded corners for a softer feel */
+  --sidebar: #ffffff; /* Sidebar background */
+  --sidebar-foreground: #374151; /* Text color in sidebar */
+  --sidebar-primary: #d97706; /* Primary action color in sidebar */
+  --sidebar-primary-foreground: #ffffff; /* Text color for primary actions in sidebar */
+  --sidebar-accent: #ec4899; /* Accent color in sidebar */
+  --sidebar-accent-foreground: #ffffff; /* Text color for accent elements in sidebar */
+  --sidebar-border: #d1d5db; /* Border color for sidebar */
+  --sidebar-ring: #d97706; /* Focus ring color for sidebar elements */
+}
+
+.dark {
+  /* Modo escuro com cores suaves para reduzir fadiga visual */
+  --background: #1f2937; /* Dark background */
+  --foreground: #f9fafb; /* Light text for readability */
+  --card: #374151; /* Dark card for content display */
+  --card-foreground: #f9fafb; /* Light text on cards */
+  --popover: #374151; /* Dark popover for tooltips */
+  --popover-foreground: #f9fafb; /* Light text in popovers */
+  --primary: #fbbf24; /* Softer amber for dark mode */
+  --primary-foreground: #1f2937; /* Dark text on primary backgrounds */
+  --secondary: #f472b6; /* Softer pink for dark mode */
+  --secondary-foreground: #1f2937; /* Dark text on secondary backgrounds */
+  --muted: #374151; /* Dark muted background */
+  --muted-foreground: #d1d5db; /* Light muted text */
+  --accent: #f472b6; /* Use for keyword highlights */
+  --accent-foreground: #1f2937; /* Dark text for accent elements */
+  --destructive: #ef4444; /* Color for destructive actions */
+  --destructive-foreground: #ffffff; /* White text for destructive actions */
+  --border: #4b5563; /* Soft gray border */
+  --input: #374151; /* Input fields background */
+  --ring: #fbbf24; /* Ring color for focus states */
+  --chart-1: #f97316; /* Color for chart elements */
+  --chart-2: #f472b6; /* Color for additional chart elements */
+  --chart-3: #fbbf24; /* Additional color for charts */
+  --chart-4: #374151; /* Dark color for charts */
+  --chart-5: #f9fafb; /* Light color for charts */
+  --radius: 0.25rem; /* Rounded corners for a softer feel */
+  --sidebar: #374151; /* Sidebar background */
+  --sidebar-foreground: #f9fafb; /* Text color in sidebar */
+  --sidebar-primary: #fbbf24; /* Primary action color in sidebar */
+  --sidebar-primary-foreground: #1f2937; /* Text color for primary actions in sidebar */
+  --sidebar-accent: #f472b6; /* Accent color in sidebar */
+  --sidebar-accent-foreground: #1f2937; /* Text color for accent elements in sidebar */
+  --sidebar-border: #4b5563; /* Border color for sidebar */
+  --sidebar-ring: #fbbf24; /* Focus ring color for sidebar elements */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Estilos adicionais para acessibilidade */
+  .focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+
+  .text-highlight {
+    @apply bg-accent text-accent-foreground px-1 rounded;
+  }
+
+  .pause-indicator {
+    @apply border-l-4 border-secondary pl-4 my-2;
+  }
+}
